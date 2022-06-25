@@ -12,5 +12,9 @@ export default class LogQueue extends BaseQueue {
 
   private constructor() {
     super(Queues.log);
+    this.queue.process(this.process);
+  }
+  private process({ data }){
+    console.log(data);
   }
 }
